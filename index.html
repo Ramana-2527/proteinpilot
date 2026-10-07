@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ProteinPilot — Food + Gym Tracker</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div><b>ProteinPilot</b><span>Food • Protein • Budget • Gym</span></div><button id="theme">🌙</button></header>
+<main>
+<section class="hero card"><div><div id="dayBadge" class="badge"></div><h1 id="date"></h1><p id="dayRule"></p></div>
+<div class="targets"><label>Protein <input id="proteinTarget" type="number" value="120">g</label><label>Calories <input id="calorieTarget" type="number" value="2400">kcal</label><label>Budget ₹<input id="budget" type="number" value="3000"></label></div></section>
+
+<section class="grid">
+<div class="metric"><small>Protein</small><strong id="p">0g</strong><em id="pRemain"></em><div class="bar"><i id="pBar"></i></div></div>
+<div class="metric"><small>Calories</small><strong id="cal">0 kcal</strong><em id="calRemain"></em><div class="bar"><i id="calBar"></i></div></div>
+<div class="metric"><small>Carbs</small><strong id="carb">0g</strong></div><div class="metric"><small>Fat</small><strong id="fat">0g</strong></div>
+<div class="metric"><small>Fiber</small><strong id="fiber">0g</strong></div><div class="metric"><small>Today's cost</small><strong id="cost">₹0</strong></div>
+</section>
+
+<section class="card"><h2>🍽️ What did you eat today?</h2><p class="muted">Type food names naturally. Quantities are optional; standard servings are used when omitted.</p>
+<div class="inputrow"><input id="foodInput" placeholder="3 eggs, 2 idli, 250ml milk, 1 banana"><select id="meal"><option>Breakfast</option><option>Lunch</option><option>Snack</option><option>Dinner</option></select><button id="add" class="primary">Add</button></div><div id="parsePreview"></div></section>
+
+<section class="columns"><div>
+<section class="card"><h2>Today's food</h2><div id="log"></div></section>
+<section class="card"><h2>💪 Today's workout</h2><div class="workout-head"><div><b id="workoutName"></b><span id="workoutMeta"></span></div><div id="workoutProgress"></div></div><div id="exerciseList"></div></section>
+<section class="card"><h2>🥗 What should I eat next?</h2><div id="suggestions"></div></section>
+</div>
+<aside>
+<section class="card"><h2>💰 Monthly budget</h2><div class="money"><span>Spent</span><b id="spent">₹0</b></div><div class="bar"><i id="budgetBar"></i></div><div class="money"><span>Remaining</span><b id="remaining">₹3000</b></div></section>
+<section class="card"><h2>🏋️ Workout settings</h2><label>Gym level<select id="level"><option value="beginner">Beginner</option><option value="intermediate">Intermediate</option></select></label><p class="muted">Exercises are selected for today's weekday and equipment availability.</p></section>
+<section class="card"><h2>Quick food</h2><div class="chips"><button>3 eggs</button><button>250ml milk</button><button>100g paneer</button><button>75g soy chunks</button><button>150g chicken</button><button>2 idli</button></div></section>
+<section class="card"><h2>Data</h2><button id="export">Export backup</button><label class="file">Import backup<input id="import" type="file" accept=".json" hidden></label><button id="reset" class="danger">Reset all</button></section>
+</aside></section>
+</main><footer>Nutrition values are estimates. Exercise selection is general fitness guidance, not medical advice.</footer>
+<script src="script.js"></script></body></html>
